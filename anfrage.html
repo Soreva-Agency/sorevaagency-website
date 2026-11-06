@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anfrage | SOREVA Agency</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="container nav-shell">
+        <a href="index.html" class="brand" aria-label="SOREVA Agency Startseite">
+            <img
+                src="assets/soreva-logo.png"
+                alt="SOREVA Agency Logo"
+                class="brand-logo"
+            >
+        </a>
+
+        <nav class="nav-links" aria-label="Hauptnavigation">
+            <a href="index.html#leistungen">Leistungen</a>
+            <a href="index.html#ueber-uns">Über uns</a>
+            <a href="index.html#pakete">Pakete</a>
+            <a href="anfrage.html" class="nav-request">Anfrage</a>
+        </nav>
+
+        <a href="anfrage.html" class="nav-cta">
+            Erstgespräch anfragen <span>→</span>
+        </a>
+    </div>
+</header>
+
+
+<main>
+
+<section class="form-section">
+
+    <div class="container form-layout">
+
+        <div class="form-intro">
+
+            <div class="eyebrow">
+                LET'S WORK TOGETHER
+            </div>
+
+            <h1>
+                Lass uns über
+                <em>deine Marke</em>
+                sprechen.
+            </h1>
+
+            <p>
+                Erzähle SOREVA kurz von deiner Marke, deinen Zielen
+                und dem, wobei du Unterstützung suchst.
+            </p>
+
+            <div class="form-note">
+
+                <strong>Gut zu wissen</strong>
+
+                <br><br>
+
+                Es gibt keine Standardlösung.
+                Das Angebot wird passend zu deinem Projekt erstellt.
+
+            </div>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <form id="contactForm">
+<div class="form-row">
+
+                    <div class="field">
+
+                        <label for="name">
+                            Vor- und Nachname *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="email">
+                            E-Mail *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="firma">
+                        Unternehmen / Brand
+                    </label>
+
+                    <input
+                        type="text"
+                        id="firma"
+                        name="firma"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="social">
+                        Instagram / TikTok / Website
+                    </label>
+
+                    <input
+                        type="text"
+                        id="social"
+                        name="social"
+                        placeholder="@deinaccount oder deinewebsite.de"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="budget">
+                        Budgetrahmen *
+                    </label>
+
+                    <select
+                        id="budget"
+                        name="budget"
+                        required
+                    >
+
+                        <option value="">
+                            Bitte auswählen
+                        </option>
+
+                        <option value="ab 500 €">
+                            ab 500 €
+                        </option>
+
+                        <option value="ab 950 €">
+                            ab 950 €
+                        </option>
+
+                        <option value="bis 1.500 €">
+                            bis 1.500 €
+                        </option>
+
+                        <option value="Noch offen">
+                            Noch offen
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="ziel">
+                        Was möchtest du erreichen? *
+                    </label>
+
+                    <textarea
+                        id="ziel"
+                        name="ziel"
+                        rows="4"
+                        required
+                        placeholder="Zum Beispiel: mehr Sichtbarkeit, professioneller Instagram-Auftritt, Content-Unterstützung, Leads ..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="message">
+                        Erzähle uns von deinem Projekt *
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="7"
+                        required
+                        placeholder="Was machst du? Was läuft aktuell? Was möchtest du verändern?"
+                    ></textarea>
+
+                </div>
+
+
+                <label class="checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="privacy"
+                        name="datenschutz_bestaetigt"
+                        value="Ja"
+                        required
+                    >
+
+                    <span>
+
+                        Ich habe die
+                        <a
+                            href="datenschutz.html"
+                            target="_blank"
+                        >
+                            Datenschutzerklärung
+                        </a>
+                        gelesen und stimme der Verarbeitung
+                        meiner Angaben zur Bearbeitung meiner
+                        Anfrage zu. *
+
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="button button-dark form-submit"
+                >
+                    Anfrage senden
+                </button>
+
+
+                <div
+                    id="successMessage"
+                    class="form-message"
+                    aria-live="polite"
+                ></div>
+                <p class="form-hint">
+                    Deine Anfrage wird direkt an SOREVA Agency übermittelt.
+                </p>
+</form>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container footer-inner">
+
+        <div>
+            <strong>SOREVA Agency</strong>
+            <br>
+            Social Media · Content · Strategy · Growth
+        </div>
+
+        <div class="footer-nav">
+
+            <a href="index.html">
+                Startseite
+            </a>
+
+            <a href="impressum.html">
+                Impressum
+            </a>
+
+            <a href="datenschutz.html">
+                Datenschutz
+            </a>
+
+        </div>
+
+        <div>
+            © <span id="year"></span> SOREVA Agency
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
