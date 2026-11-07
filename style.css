@@ -2692,3 +2692,190 @@ h3 {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* =========================
+   MOBILE FEINSCHLIFF
+   Fokus: keine Überlagerungen, klare Abstände und lesbare Typografie
+========================= */
+
+@media (max-width: 560px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Kompakte, ruhige Navigation */
+    .navbar {
+        top: 9px;
+    }
+
+    .nav-shell {
+        width: calc(100% - 20px);
+        min-height: 58px;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 7px;
+        padding: 6px 9px;
+    }
+
+    .brand {
+        gap: 7px;
+    }
+
+    .brand-logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .brand-copy {
+        display: block;
+        min-width: 0;
+    }
+
+    .brand-name {
+        display: block;
+        max-width: 100%;
+        font-size: 11px;
+        letter-spacing: .035em;
+        line-height: 1.15;
+        white-space: nowrap;
+    }
+
+    .brand-tagline {
+        display: none;
+    }
+
+    .nav-cta {
+        min-height: 36px;
+        padding: 8px 10px;
+        font-size: 10px;
+        gap: 5px;
+    }
+
+    /* Hero: kompakter und ohne überlappendes Logo */
+    .hero-image {
+        min-height: 0;
+        padding: 112px 0 54px;
+    }
+
+    .hero-image .hero-grid {
+        min-height: 0;
+        display: block;
+    }
+
+    .hero-image .hero-content {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+        margin: 13px 0 19px;
+        font-size: clamp(42px, 11.8vw, 52px);
+        line-height: .99;
+        letter-spacing: -.05em;
+    }
+
+    .hero-image .hero-text {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 23px;
+    }
+
+    .hero-buttons .button {
+        min-height: 44px;
+        padding: 11px 17px;
+        font-size: 13px;
+    }
+
+    /* Das schwebende Logo verdeckt auf kleinen Displays keine Buttons mehr. */
+    .hero-logo-panel {
+        display: none;
+    }
+
+    /* Abschnitte und Überschriften bekommen konsistente Seitenabstände. */
+    .section,
+    .about-section,
+    .cta-section {
+        padding: 58px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .section-heading h2,
+    .intro-grid h2 {
+        font-size: clamp(36px, 10vw, 46px);
+        line-height: 1.04;
+    }
+
+    .section-heading p,
+    .lead {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .intro-grid {
+        gap: 22px;
+        align-items: center;
+    }
+
+    .service-card {
+        min-height: 0;
+        padding: 23px;
+    }
+
+    .service-combined-grid .service-card {
+        min-height: 0;
+    }
+
+    .package-card {
+        min-height: 0;
+        padding: 24px;
+    }
+
+    .package-card p {
+        margin: 17px 0 22px;
+    }
+
+    .important-info {
+        padding: 18px;
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .cta-card {
+        padding: 25px;
+    }
+}
+
+/* Sehr schmale Smartphones */
+@media (max-width: 380px) {
+    .nav-cta {
+        padding-inline: 8px;
+        font-size: 9px;
+    }
+
+    .brand-name {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 41px;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+    }
+
+    .hero-buttons .button {
+        flex: 1 1 auto;
+    }
+}
