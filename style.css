@@ -3115,3 +3115,22 @@ h3 {
 .service-examples-dropdown:not([open]) summary {
     color: #655e61;
 }
+
+
+/* Ruhiger Seitenfluss: pro Abschnitt nur ein langsamer Farbwechsel.
+   Die Endfarbe eines Abschnitts ist die Startfarbe des nächsten. */
+.intro-section {
+    background: linear-gradient(180deg, #f3e7ed 0%, #e9f0f3 100%);
+}
+.about-section {
+    background: linear-gradient(180deg, #e9f0f3 0%, #eee6dc 100%);
+}
+#leistungen {
+    background: linear-gradient(180deg, #eee6dc 0%, #f0e6eb 100%);
+}
+#pakete {
+    background: linear-gradient(180deg, #f0e6eb 0%, #e8eff2 100%);
+}
+.cta-section {
+    background: linear-gradient(180deg, #e8eff2 0%, #f1e9e5 100%);
+}
