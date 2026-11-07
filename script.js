@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const successMessage = document.getElementById("successMessage");
+    // Web3Forms access key (provided after email verification).
+    const web3FormsAccessKey = "";
 
     form.querySelectorAll('input[required], textarea[required]').forEach((field) => {
         field.addEventListener("input", () => field.setCustomValidity(""));
@@ -49,9 +51,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const formData = new FormData(form);
 
-        formData.append("_subject", "Neue Projektanfrage – SOREVA Agency");
-        formData.append("_replyto", formData.get("email") || "");
-        formData.append("_captcha", "true");
+        if (!web3FormsAccessKey) {
+            const fields = Array.from(formData.entries())
+                .filter(([key]) => key !== "datenschutz_bestaetigt")
+                .map(([key, value]) => key + ": " + value)
+                .join("\n\n");
+            const subject = encodeURIComponent("Neue Projektanfrage – SOREVA Agency");
+            const body = encodeURIComponent(fields);
+            const mailLink = "mailto:soreva.agency@gmx.de?subject=" + subject + "&body=" + body;
+            if (successMessage) {
+                successMessage.textContent = "Dein E-Mail-Programm wird geöffnet. Bitte sende die vorbereitete Nachricht dort selbst ab. Die Anfrage wurde noch nicht automatisch übermittelt.";
+                successMessage.classList.add("show");
+            }
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = "Anfrage senden";
+            }
+            window.location.href = mailLink;
+            return;
+        }
+        formData.append("access_key", web3FormsAccessKey);
+        formData.append("subject", "Neue Projektanfrage – SOREVA Agency");
+        formData.append("from_name", "SOREVA Agency Website");
+        formData.append("replyto", formData.get("email") || "");
 
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 15000);
@@ -64,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             const response = await fetch(
-                "https://formsubmit.co/ajax/soreva.agency@gmx.de",
+                "https://api.web3forms.com/submit",
                 {
                     method: "POST",
                     body: formData,
@@ -77,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const result = await response.json();
 
-            if (!response.ok || result.success === false) {
+            if (!response.ok || result.success !== true) {
                 throw new Error(result.message || "Formular konnte nicht gesendet werden.");
             }
 
