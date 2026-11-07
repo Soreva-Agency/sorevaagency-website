@@ -3063,3 +3063,13 @@ h3 {
     color: #5d555b;
     line-height: 1.65;
 }
+
+
+/* Jede Leistungskarte wächst unabhängig, wenn ihr Info-Dropdown geöffnet wird. */
+.service-combined-grid {
+    align-items: start;
+}
+.service-combined-grid .service-card {
+    height: auto;
+    align-self: start;
+}
