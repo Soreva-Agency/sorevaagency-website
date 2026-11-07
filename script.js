@@ -13,8 +13,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const successMessage = document.getElementById("successMessage");
 
+    form.querySelectorAll('input[required], textarea[required]').forEach((field) => {
+        field.addEventListener("input", () => field.setCustomValidity(""));
+    });
+
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
+
+        // Reine Leerzeichen zählen nicht als ausgefüllte Pflichtfelder.
+        const requiredTextFields = form.querySelectorAll(
+            'input[required]:not([type="checkbox"]):not([type="radio"]), textarea[required]'
+        );
+        requiredTextFields.forEach((field) => {
+            field.setCustomValidity(
+                field.value.trim() ? "" : "Bitte fülle dieses Pflichtfeld aus."
+            );
+        });
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
 
         const submitButton = form.querySelector('button[type="submit"]');
 
