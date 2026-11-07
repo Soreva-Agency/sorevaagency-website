@@ -2931,3 +2931,11 @@ h3 {
 .cta-card {
     background: linear-gradient(125deg, #f0dce6 0%, #dcecf3 55%, #eee0cb 100%);
 }
+
+
+/* Hinweis auf Pflichtfelder im Anfrageformular */
+.form-required-note {
+    margin-bottom: 18px;
+    color: #70616a;
+    font-size: 13px;
+}
