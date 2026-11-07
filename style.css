@@ -2939,3 +2939,63 @@ h3 {
     color: #70616a;
     font-size: 13px;
 }
+
+
+/* Gleichmäßige SOREVA-Farbverläufe: sanft, aber über die ganze Scrollstrecke sichtbar.
+   Wiederholte Farbstopps vermeiden fast weiße bzw. plötzlich kräftige Bereiche. */
+.intro-section {
+    background: linear-gradient(
+        180deg,
+        #f6e8ef 0%,
+        #eaf3f7 48%,
+        #f1e8ed 100%
+    );
+}
+
+.about-section {
+    background: linear-gradient(
+        180deg,
+        #f1e8ed 0%,
+        #e9eff2 35%,
+        #f1e5e9 68%,
+        #efe7dc 100%
+    );
+}
+
+#leistungen {
+    background: linear-gradient(
+        180deg,
+        #efe7dc 0%,
+        #f2e4eb 30%,
+        #e6eff3 68%,
+        #eee7e3 100%
+    );
+}
+
+#pakete {
+    background: linear-gradient(
+        180deg,
+        #eee7e3 0%,
+        #f2e7ec 38%,
+        #e8eff2 70%,
+        #f1e8e4 100%
+    );
+}
+
+.cta-section {
+    background: linear-gradient(
+        180deg,
+        #f1e8e4 0%,
+        #eee4ea 50%,
+        #e8f0f3 100%
+    );
+}
+
+.cta-card {
+    background: linear-gradient(
+        135deg,
+        #efdce5 0%,
+        #e0edf3 52%,
+        #eddfcd 100%
+    );
+}
