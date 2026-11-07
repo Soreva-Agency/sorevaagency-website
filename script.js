@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const successMessage = document.getElementById("successMessage");
     // Web3Forms access key (provided after email verification).
-    const web3FormsAccessKey = "";
+    const web3FormsAccessKey = "a283310b-ffbf-4e85-a295-5e1de278cbe5";
 
     form.querySelectorAll('input[required], textarea[required]').forEach((field) => {
         field.addEventListener("input", () => field.setCustomValidity(""));
