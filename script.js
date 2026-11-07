@@ -53,12 +53,22 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("_replyto", formData.get("email") || "");
         formData.append("_captcha", "true");
 
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000);
+        const slowNoticeId = setTimeout(() => {
+            if (successMessage) {
+                successMessage.textContent = "Die Übermittlung dauert etwas länger. Bitte warte kurz …";
+                successMessage.classList.add("show");
+            }
+        }, 5000);
+
         try {
             const response = await fetch(
                 "https://formsubmit.co/ajax/soreva.agency@gmx.de",
                 {
                     method: "POST",
                     body: formData,
+                    signal: controller.signal,
                     headers: {
                         Accept: "application/json"
                     }
@@ -86,14 +96,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } catch (error) {
             if (successMessage) {
-                successMessage.textContent =
-                    "Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es noch einmal.";
+                successMessage.textContent = error.name === "AbortError"
+                    ? "Die Übermittlung dauert zu lange. Ob die Anfrage angekommen ist, ist unklar. Bitte prüfe zuerst dein E-Mail-Postfach oder kontaktiere SOREVA direkt unter soreva.agency@gmx.de, bevor du erneut sendest."
+                    : "Die Anfrage konnte nicht bestätigt werden. Bitte prüfe dein E-Mail-Postfach oder kontaktiere SOREVA unter soreva.agency@gmx.de.";
                 successMessage.classList.add("show");
             }
 
             console.error("SOREVA Formular:", error);
 
         } finally {
+            clearTimeout(timeoutId);
+            clearTimeout(slowNoticeId);
             if (submitButton) {
                 submitButton.disabled = false;
                 submitButton.textContent = "Anfrage senden";
