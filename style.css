@@ -3096,3 +3096,16 @@ h3 {
         transition: none;
     }
 }
+
+
+/* Info-Dropdowns: geschlossen schwarz, geöffnet SOREVA-Gold */
+.service-examples-dropdown summary {
+    color: #17171a;
+    transition: color 220ms ease;
+}
+.service-examples-dropdown[open] summary {
+    color: var(--gold-dark);
+}
+@media (prefers-reduced-motion: reduce) {
+    .service-examples-dropdown summary { transition: none; }
+}
