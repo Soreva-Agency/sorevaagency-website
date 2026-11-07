@@ -3073,3 +3073,26 @@ h3 {
     height: auto;
     align-self: start;
 }
+
+
+/* Sanfte Aufklapp-Animation für die vier Leistungs-Dropdowns */
+.service-examples-dropdown::details-content {
+    block-size: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: block-size 320ms ease, opacity 260ms ease, content-visibility 320ms allow-discrete;
+    transition-behavior: allow-discrete;
+}
+.service-examples-dropdown[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+}
+@supports (interpolate-size: allow-keywords) {
+    :root { interpolate-size: allow-keywords; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .service-examples-dropdown::details-content,
+    .service-dropdown-chevron {
+        transition: none;
+    }
+}
