@@ -2999,3 +2999,11 @@ h3 {
         #eddfcd 100%
     );
 }
+
+
+/* Anfrage: Infokasten bewusst sichtbar, ohne den soften Stil zu verlieren */
+.form-note {
+    background: linear-gradient(130deg, #efd5e1 0%, #e3e9f0 55%, #d7e8f1 100%);
+    border: 1px solid #d8c2d0;
+    box-shadow: 0 10px 28px rgba(123, 92, 114, .08);
+}
