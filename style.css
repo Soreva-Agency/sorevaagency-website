@@ -2879,3 +2879,55 @@ h3 {
         flex: 1 1 auto;
     }
 }
+
+
+/* SOREVA Farb-Feinschliff: etwas sattere, weiterhin softe Hintergründe */
+:root {
+    --pink: #efcbdc;
+    --pink-light: #f8e7ef;
+    --blue: #cfe5ef;
+    --champagne: #e8d4b8;
+}
+
+/* Mehr sichtbare, aber zurückhaltende Farbflächen zwischen den Abschnitten */
+.intro-section {
+    background: linear-gradient(115deg, #fbf2f5 0%, #edf6fa 100%);
+}
+
+.about-section {
+    background: linear-gradient(125deg, #f6e6ed 0%, #e8f2f6 52%, #f3e8dc 100%);
+}
+
+#leistungen {
+    background: linear-gradient(180deg, #f8f3ee 0%, #f4e8ee 48%, #eaf3f7 100%);
+}
+
+#leistungen .service-card {
+    background: rgba(255, 255, 255, .78);
+    border-color: rgba(220, 203, 194, .8);
+}
+
+#leistungen .service-card-pink {
+    background: linear-gradient(145deg, #fff9fb 0%, #f3dce7 100%);
+}
+
+#leistungen .service-card-beige {
+    background: linear-gradient(145deg, #fffaf2 0%, #eee1cd 100%);
+}
+
+#leistungen .service-card-blue {
+    background: linear-gradient(145deg, #f8fcfe 0%, #d9eaf2 100%);
+}
+
+#leistungen .service-individual-note {
+    background: linear-gradient(115deg, #f2dce7 0%, #e1eff5 100%);
+    border-color: #dfcbd5;
+}
+
+#pakete {
+    background: linear-gradient(180deg, #f7f1eb 0%, #f2e9e9 100%);
+}
+
+.cta-card {
+    background: linear-gradient(125deg, #f0dce6 0%, #dcecf3 55%, #eee0cb 100%);
+}
