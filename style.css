@@ -3113,5 +3113,5 @@ h3 {
 
 /* Zurückhaltendes Anthrazit für geschlossene Info-Dropdowns */
 .service-examples-dropdown:not([open]) summary {
-    color: #514a4d;
+    color: #655e61;
 }
