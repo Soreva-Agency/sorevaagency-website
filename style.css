@@ -3007,3 +3007,59 @@ h3 {
     border: 1px solid #d8c2d0;
     box-shadow: 0 10px 28px rgba(123, 92, 114, .08);
 }
+
+
+/* Aufklappbare Infofelder für individuelle Leistungsbeispiele */
+.service-combined-grid .service-examples-dropdown {
+    margin-top: 18px;
+    border-top: 1px solid rgba(185, 155, 106, .26);
+    padding-top: 13px;
+    font-size: 13px;
+}
+.service-examples-dropdown summary {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    color: var(--gold-dark);
+    list-style: none;
+    padding: 5px 0;
+    user-select: none;
+}
+.service-examples-dropdown summary::-webkit-details-marker { display: none; }
+.service-examples-dropdown summary:focus-visible {
+    outline: 2px solid var(--gold-dark);
+    outline-offset: 4px;
+    border-radius: 5px;
+}
+.service-info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 21px;
+    height: 21px;
+    flex: 0 0 21px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 13px;
+}
+.service-dropdown-chevron {
+    width: 8px;
+    height: 8px;
+    margin-left: auto;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform .2s ease;
+}
+.service-examples-dropdown[open] .service-dropdown-chevron {
+    transform: rotate(225deg);
+}
+.service-examples-content {
+    padding: 9px 0 4px 30px;
+    color: #5d555b;
+    line-height: 1.65;
+}
