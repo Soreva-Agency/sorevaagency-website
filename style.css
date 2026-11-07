@@ -2661,3 +2661,34 @@ h3 {
         font-size: 23px;
     }
 }
+
+
+/* Zusammengeführter Bereich: Ansatz und konkrete Leistungsbeispiele */
+.about-single {
+    max-width: 900px;
+}
+
+.service-combined-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-combined-grid .service-card {
+    min-height: 270px;
+}
+
+.service-combined-grid .service-examples-list {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(185, 155, 106, .22);
+    font-size: 13px;
+}
+
+.service-combined-grid .service-examples-list strong {
+    color: var(--gold-dark);
+}
+
+@media (max-width: 930px) {
+    .service-combined-grid {
+        grid-template-columns: 1fr;
+    }
+}
