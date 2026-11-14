@@ -3194,3 +3194,74 @@ h3 {
     .brand-name { font-size: 10px; }
     .hero-buttons .button { flex-basis: 100%; }
 }
+
+
+/* Mobile header: keep logo, name and action inside the rounded panel. */
+@media (max-width: 930px) {
+    .navbar {
+        top: max(10px, env(safe-area-inset-top, 0px));
+    }
+
+    .nav-shell,
+    .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100% - 24px);
+        min-height: 64px;
+        gap: 12px;
+        padding: 10px 14px;
+        border-radius: 24px;
+    }
+
+    .nav-links { display: none; }
+
+    .navbar .brand {
+        display: flex;
+        align-items: center;
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 8px;
+    }
+
+    .navbar .brand-logo {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+        border-radius: 6px;
+    }
+
+    .navbar .brand-copy { display: block; min-width: 0; }
+    .navbar .brand-name {
+        display: block;
+        font-size: clamp(10px, 2.8vw, 13px);
+        line-height: 1.25;
+        letter-spacing: .025em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .navbar .brand-tagline { display: none; }
+
+    .navbar .nav-cta {
+        flex: 0 0 auto;
+        min-height: 44px;
+        padding: 10px 12px;
+        font-size: 11px;
+        line-height: 1.2;
+        white-space: nowrap;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 560px) {
+    .hero-image { padding-top: 110px; }
+}
+
+@media (max-width: 380px) {
+    .nav-shell, .nav-inner { gap: 8px; padding-inline: 12px; }
+    .navbar .brand { gap: 6px; }
+    .navbar .brand-logo { width: 28px; height: 28px; flex-basis: 28px; }
+    .navbar .nav-cta { padding-inline: 10px; font-size: 10px; }
+    .navbar .nav-cta span { display: none; }
+}
