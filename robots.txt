@@ -1,0 +1,7 @@
+# GitHub Pages project site: Google reads /robots.txt at the host root.
+# This project-path copy is a prepared template, not an active host-level policy.
+# To activate, place/merge these directives at https://soreva-agency.github.io/robots.txt
+User-agent: *
+Allow: /sorevaagency-website/
+
+Sitemap: https://soreva-agency.github.io/sorevaagency-website/sitemap.xml
