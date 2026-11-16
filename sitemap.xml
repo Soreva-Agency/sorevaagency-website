@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://soreva-agency.github.io/sorevaagency-website/</loc>
-  </url>
-<url><loc>https://soreva-agency.github.io/sorevaagency-website/portfolio/elora.html</loc></url><url><loc>https://soreva-agency.github.io/sorevaagency-website/portfolio/cafe.html</loc></url><url><loc>https://soreva-agency.github.io/sorevaagency-website/portfolio/maison.html</loc></url></urlset>
+  <url><loc>https://soreva-agency.github.io/sorevaagency-website/</loc></url>
+  <url><loc>https://soreva-agency.github.io/sorevaagency-website/anfrage.html</loc></url>
+  <url><loc>https://soreva-agency.github.io/sorevaagency-website/impressum.html</loc></url>
+  <url><loc>https://soreva-agency.github.io/sorevaagency-website/datenschutz.html</loc></url>
+  <url><loc>https://soreva-agency.github.io/sorevaagency-website/portfolio/elora.html</loc></url>
+  <url><loc>https://soreva-agency.github.io/sorevaagency-website/portfolio/cafe.html</loc></url>
+  <url><loc>https://soreva-agency.github.io/sorevaagency-website/portfolio/maison.html</loc></url>
+</urlset>
