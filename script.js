@@ -11,6 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    const packageBudgets = new Map([
+        ["Essential", "ab 500 €"],
+        ["Growth", "ab 950 €"],
+        ["Premium", "bis 1.500 €"]
+    ]);
+    const selectedPackage = new URLSearchParams(window.location.search).get("paket");
+    const packageNotice = document.getElementById("selectedPackage");
+    if (packageBudgets.has(selectedPackage) && packageNotice) {
+        form.elements.namedItem("budget").value = packageBudgets.get(selectedPackage);
+        packageNotice.textContent = "Ausgewähltes Paket: " + selectedPackage;
+        packageNotice.hidden = false;
+    }
+
     const successMessage = document.getElementById("successMessage");
     // Web3Forms access key (provided after email verification).
     const web3FormsAccessKey = "a283310b-ffbf-4e85-a295-5e1de278cbe5";
@@ -50,6 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const formData = new FormData(form);
+        if (packageBudgets.has(selectedPackage)) {
+            formData.set("paket", selectedPackage);
+        }
 
         if (!web3FormsAccessKey) {
             const fields = Array.from(formData.entries())

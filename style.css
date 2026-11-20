@@ -1617,7 +1617,8 @@ h3 {
 }
 
 
-.legal-content h3 {
+.legal-content h3,
+.legal-imprint h2 {
     margin:
         35px 0
         10px;
