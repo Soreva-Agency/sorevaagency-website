@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!web3FormsAccessKey) {
             const fields = Array.from(formData.entries())
-                .filter(([key]) => key !== "datenschutz_bestaetigt")
                 .map(([key, value]) => key + ": " + value)
                 .join("\n\n");
             const subject = encodeURIComponent("Neue Projektanfrage – SOREVA Agency");
