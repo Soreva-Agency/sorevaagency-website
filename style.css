@@ -3311,7 +3311,7 @@ h3 {
 }
 .webdesign-details { margin: 18px 0; }
 @media (max-width: 930px) {
-    .navbar .brand-tagline { font-size: 0.75rem; letter-spacing: .03em; }
+    .navbar .brand-tagline { font-size: clamp(0.5625rem, 2.4vw, 0.625rem); letter-spacing: .03em; }
 }
 
 .hero-content > .eyebrow {
