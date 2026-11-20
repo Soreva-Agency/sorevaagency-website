@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Café Noiré | Webdesign-Konzept von SOREVA</title>
+<style>
+:root {
+    color-scheme: light;
+    --paper: #f8efe2;
+    --ink: #39261f;
+    --coffee: #472e24;
+    --line: #c5ac93;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.6 system-ui, sans-serif; }
+h1, h2 { font-family: Georgia, serif; font-weight: 400; line-height: 1.08; margin: 0; }
+h1 { font-size: clamp(3rem, 7vw, 6rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+a { color: inherit; text-underline-offset: .25em; }
+a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+.shell { width: min(72rem, calc(100% - 2rem)); margin-inline: auto; }
+.preview { background: var(--coffee); color: var(--paper); padding: .55rem 0; }
+.preview .shell, header, nav { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; }
+.preview .shell, header { justify-content: space-between; }
+header { padding-block: 1.3rem; }
+.brand { font: 1.35rem Georgia, serif; }
+.hero { display: grid; grid-template-columns: 1fr 1fr; background: var(--coffee); color: var(--paper); }
+.hero div { align-self: center; padding: clamp(1.5rem, 5vw, 4.5rem); }
+.hero img { display: block; width: 100%; height: 100%; min-height: 21rem; object-fit: cover; }
+.cta { display: inline-block; margin-top: .75rem; padding: .65rem 1rem; border: 1px solid currentColor; }
+.sections { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 7vw, 6rem); padding-block: 3.5rem; }
+dl { margin: 1rem 0 0; }
+dl div { display: flex; justify-content: space-between; gap: .75rem; border-bottom: 1px solid var(--line); padding: .65rem 0; }
+dd { margin: 0; text-align: right; }
+footer { border-top: 1px solid var(--line); padding-block: 1.5rem; }
+@media (max-width: 43rem) {
+    .hero, .sections { grid-template-columns: 1fr; }
+    .hero img { height: auto; min-height: 0; aspect-ratio: 3 / 2; }
+    .sections { padding-block: 2rem; }
+}
+</style>
+</head>
+<body>
+<div class="preview">
+    <div class="shell">
+        <span>Fiktives Webdesign-Konzept von SOREVA</span>
+        <a href="../index.html#portfolio">Zurück zum Portfolio</a>
+    </div>
+</div>
+<header class="shell">
+    <span class="brand">Café Noiré</span>
+    <nav aria-label="Café-Navigation">
+        <a href="#karte">Karte</a>
+        <a href="#besuch">Öffnungszeiten</a>
+    </nav>
+</header>
+<main class="shell">
+    <section class="hero" aria-labelledby="headline">
+        <div>
+            <h1 id="headline">Kaffee in Ruhe genießen.</h1>
+            <p>Espresso, Gebäck und ein Platz für deine Pause.</p>
+            <a class="cta" href="#karte">Karte entdecken</a>
+        </div>
+        <img src="../assets/portfolio/cafe-hero.webp" width="1536" height="1024" alt="KI-generierte Bildwelt für das fiktive Café Noiré">
+    </section>
+    <div class="sections">
+        <section id="karte" aria-labelledby="karte-titel">
+            <h2 id="karte-titel">Aus unserer Karte</h2>
+            <dl>
+                <div><dt>Espresso</dt><dd>2,50 €</dd></div>
+                <div><dt>Cappuccino</dt><dd>3,80 €</dd></div>
+                <div><dt>Buttercroissant</dt><dd>3,20 €</dd></div>
+                <div><dt>Zitronenkuchen</dt><dd>4,20 €</dd></div>
+            </dl>
+        </section>
+        <section id="besuch" aria-labelledby="besuch-titel">
+            <h2 id="besuch-titel">Öffnungszeiten</h2>
+            <dl>
+                <div><dt>Dienstag bis Freitag</dt><dd>8–18 Uhr</dd></div>
+                <div><dt>Samstag und Sonntag</dt><dd>9–17 Uhr</dd></div>
+                <div><dt>Montag</dt><dd>Geschlossen</dd></div>
+            </dl>
+        </section>
+    </div>
+</main>
+<footer class="shell">
+    <a href="../anfrage.html">Eine Website bei SOREVA anfragen</a>
+</footer>
+</body>
+</html>
