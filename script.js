@@ -24,6 +24,23 @@ document.addEventListener("DOMContentLoaded", () => {
         packageNotice.hidden = false;
     }
 
+    const budgetSelect = form.elements.namedItem("budget");
+    const customBudgetField = document.getElementById("customBudgetField");
+    const customBudget = form.elements.namedItem("budget_betrag_eur");
+
+    function updateCustomBudget() {
+        const usesCustomBudget = budgetSelect.value === "Eigenes Budget";
+        customBudgetField.hidden = !usesCustomBudget;
+        customBudget.disabled = !usesCustomBudget;
+        customBudget.required = usesCustomBudget;
+    }
+
+    if (budgetSelect && customBudgetField && customBudget) {
+        budgetSelect.addEventListener("change", updateCustomBudget);
+        window.addEventListener("pageshow", updateCustomBudget);
+        updateCustomBudget();
+    }
+
     const successMessage = document.getElementById("successMessage");
     // Web3Forms access key (provided after email verification).
     const web3FormsAccessKey = "a283310b-ffbf-4e85-a295-5e1de278cbe5";
@@ -119,6 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             form.reset();
+            if (budgetSelect && customBudgetField && customBudget) {
+                updateCustomBudget();
+            }
 
             if (successMessage) {
                 successMessage.textContent =
